@@ -1,0 +1,3 @@
+include ':module_mediator'
+include ':app'
+rootProject.name = "ModuleInterfaceDemo"
