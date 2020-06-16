@@ -1,0 +1,29 @@
+ext {
+    applicationId = "com.snail.moduleinterfacedemo"
+    /**
+     * 项目版本信息
+     */
+    versions = [
+            //base version
+            compileSdkVersion: 29,
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+    /**
+     * 项目依赖
+     */
+    libs = [
+
+    ]
+    /**
+     * 接口地址
+     */
+    url = [
+
+    ]
+}
+
+
+
