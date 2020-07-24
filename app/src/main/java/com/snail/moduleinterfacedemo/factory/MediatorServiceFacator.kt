@@ -7,7 +7,7 @@ class MediatorServiceFactory private constructor() : IServiceManager {
     private val mClassMap = HashMap<Any, ServiceClassData<*, *>>()
 
     companion object {
-        val instance: MediatorServiceFactory by lazy {
+        val instance: MediatorServiceFactory by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
             MediatorServiceFactory()
         }
     }
