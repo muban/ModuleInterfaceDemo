@@ -5,10 +5,16 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.snail.module_mediator.login.ILoginService
 import com.snail.module_mediator.login.LoginServiceImpl
 import com.snail.moduleinterfacedemo.factory.MediatorServiceFactory
+import kotlin.properties.Delegates
 
 class MApp : Application() {
+    companion object {
+        var instance: MApp by Delegates.notNull()
+    }
+
     override fun onCreate() {
         super.onCreate()
+        instance = this
         //注册服务
         registerService()
         // 这两行必须写在init之前，否则这些配置在init过程中将无效
@@ -21,6 +27,8 @@ class MApp : Application() {
         // 尽可能早，推荐在Application中初始化
         ARouter.init(this)
     }
+
+    fun getInstance(): MApp = this
 
     private fun registerService() {
         MediatorServiceFactory.instance.put(ILoginService::class.java, LoginServiceImpl::class.java)

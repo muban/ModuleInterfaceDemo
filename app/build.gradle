@@ -51,4 +51,9 @@ dependencies {
     //api与compiler匹配使用，使用最新版可以保证兼容    
     api 'com.alibaba:arouter-api:1.5.0'
     kapt 'com.alibaba:arouter-compiler:1.2.2'
+    //viewModel相关
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    //数据库room
+    implementation "android.arch.persistence.room:runtime:$libs.room_version"
+    kapt "android.arch.persistence.room:compiler:$libs.room_version"
 }

@@ -9,6 +9,8 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.snail.moduleinterfacedemo.R
 import com.snail.moduleinterfacedemo.constant.RouterPath
 import com.snail.moduleinterfacedemo.databinding.FirstBinding
+import com.snail.moduleinterfacedemo.db.DBInstance
+import com.snail.moduleinterfacedemo.db.entity.Person
 import com.snail.moduleinterfacedemo.entry.OneBean
 
 @Route(path = RouterPath.FIRST_ACTIVITY)
@@ -26,6 +28,10 @@ class FirstActivity : AppCompatActivity() {
             mDataBinding.name = "click to change data"
             mSecond.title = "点击文字"
             mSecond.notifyChange()
+            //异步
+//            DBInstance.instance.dataBase().personDao()
+//                .insert(Person(name = "demo", age = 1))
+            //
             Toast.makeText(this@FirstActivity, "click binding", Toast.LENGTH_SHORT).show()
         }
     }
